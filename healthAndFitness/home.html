@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Health & Fitness Guide</title>
+  <meta name="description" content="Home workouts, nutrition tips, and simple tools to plan a healthier routine." />
+  <link rel="stylesheet" href="style1.css">
+  <!-- <link rel="icon" type="image/png" href="favicon.png"> -->
+
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">🏃‍♀️</div>
+        <div class="name">Health & Fitness Guide</div>
+      </div>
+      <nav id="site-nav">
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle Menu">☰</button>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="index.html">About</a></li>
+          <li><a href="workout.html">Workouts</a></li>
+          <li><a href="Nutrition.html">Nutrition</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="nav-item"> <a class="nav-link" href="https://forms.gle/5QPb1mUm7hzHp2V68">Feedback</a> </li>
+            <li><button class="btn" id="openSignup">Signup</button></li>
+          <li><button class="btn secondary" id="openLogin">Login</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<!-- Signup Form -->
+  <!-- <section id="signup">
+    <div class="container">
+      <h2>Signup</h2>
+      <form id="signupForm">
+        <div class="field">
+          <label for="signupName">Name</label>
+          <input id="signupName" type="text" class="input" required placeholder="Enter your name"/>
+        </div>
+        <div class="field">
+          <label for="signupEmail">Email</label>
+          <input id="signupEmail" type="email" class="input" required placeholder="Enter your email"/>
+        </div>
+        <div class="field">
+          <label for="signupPassword">Password</label>
+          <input id="signupPassword" type="password" class="input" required placeholder="Enter password"/>
+        </div>
+        <button class="btn" type="submit">Signup</button>
+      </form>
+    </div>
+  </section>
+
+  <Login Form -->
+  <!-- <section id="login">
+    <div class="container">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <div class="field">
+          <label for="loginEmail">Email</label>
+          <input id="loginEmail" type="email" class="input" required placeholder="Enter your email"/>
+        </div>
+        <div class="field">
+          <label for="loginPassword">Password</label>
+          <input id="loginPassword" type="password" class="input" required placeholder="Enter password"/>
+        </div>
+        <button class="btn" type="submit">Login</button>
+      </form>
+    </div>
+  </section>  -->
+<!-- Signup Modal -->
+  <dialog id="signupModal">
+    <form id="signupForm" method="dialog" style="min-width:300px;padding:20px;">
+      <h3>Signup</h3>
+      <input type="text" id="signupName" placeholder="Name" required class="input"><br><br>
+      <input type="email" id="signupEmail" placeholder="Email" required class="input"><br><br>
+      <input type="password" id="signupPassword" placeholder="Password" required class="input"><br><br>
+      <button type="submit" class="btn">Signup</button>
+      <button type="button" class="btn secondary" onclick="document.getElementById('signupModal').close()">Close</button>
+    </form>
+  </dialog>
+
+  <!-- Login Modal -->
+  <dialog id="loginModal">
+    <form id="loginForm" method="dialog" style="min-width:300px;padding:20px;">
+      <h3>Login</h3>
+      <input type="email" id="loginEmail" placeholder="Email" required class="input"><br><br>
+      <input type="password" id="loginPassword" placeholder="Password" required class="input"><br><br>
+      <button type="submit" class="btn">Login</button>
+      <button type="button" class="btn secondary" onclick="document.getElementById('loginModal').close()">Close</button>
+    </form>
+  </dialog>
+  <!-- Hero -->
+  <main id="home" class="hero">
+    <div class="container wrap">
+      <div>
+        <h1 class="headline">Your Health, Your Fitness, <span style="color:var(--brand)">Your Life</span> ✨</h1>
+        <p class="sub">Simple home workouts, weekly nutrition ideas, and a lightweight planner—all in one page you can host on GitHub Pages.</p>
+        <div class="cta">
+          <button class="btn" id="openAppointment">Book Appointment</button>
+          <button class="btn secondary" id="openDiet">Get Diet Plan</button>
+        </div>
+        <div class="row" style="margin-top:12px">
+          <span class="badge">Free • No login</span>
+          <span class="hint">PWA ready markup, responsive layout, accessible components.</span>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h3 style="margin:0 0 10px">Weekly Snapshot</h3>
+        <div class="metrics">
+          <div class="metric">
+            <div class="kpi" id="kpiWorkouts">0</div>
+            <div class="muted">Workouts</div>
+          </div>
+          <div class="metric">
+            <div class="kpi" id="kpiMinutes">0</div>
+            <div class="muted">Minutes</div>
+          </div>
+          <div class="metric">
+            <div class="kpi" id="kpiWater">0</div>
+            <div class="muted">Glasses</div>
+          </div>
+        </div>
+        <p class="hint" style="margin-top:10px">These update when you add entries via the buttons above.</p>
+      </aside>
+    </div>
+  </main>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2>About Us</h2>
+      <p class="lead">Born during the quarantine era, this project keeps wellness accessible at home. It blends expert curated bodyweight workouts with practical nutrition ideas you can actually stick to.</p>
+      <div class="grid cols-3">
+        <div class="card"><h3>Mission</h3><p class="muted">Lower the barrier to a healthy routine—no gym, no fancy gear, just consistency and clarity.</p></div>
+        <div class="card"><h3>Approach</h3><p class="muted">Progressive overload with bodyweight moves, weekly meal planning, and habit tracking.</p></div>
+        <div class="card"><h3>Outcomes</h3><p class="muted">Better energy, improved strength & mobility, and sustainable eating patterns.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Workouts -->
+  <section id="workouts">
+    <div class="container">
+      <h2>Workouts</h2>
+      <p class="lead">Pick a level. Each session is ~25–35 minutes. No equipment required.</p>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3>Beginner</h3>
+          <ul class="muted">
+            <li>Warm up 5 min (march, arm circles, hip openers)</li>
+            <li>3× (10 squats • 8 push ups (knees) • 20s plank)</li>
+            <li>Cool down 5 min (hamstrings, calves, shoulders)</li>
+          </ul>
+          <button class="btn" data-plan="beginner">Add to Plan</button>
+        </article>
+        <article class="card">
+          <h3>Intermediate</h3>
+          <ul class="muted">
+            <li>Warm up 5 min (jumping jacks, hip hinges)</li>
+            <li>4× (12 squats • 10 push ups • 30s side planks)</li>
+            <li>Cool down 5 min (quads, T spine rotation)</li>
+          </ul>
+          <button class="btn" data-plan="intermediate">Add to Plan</button>
+        </article>
+        <article class="card">
+          <h3>Advanced</h3>
+          <ul class="muted">
+            <li>Warm up 5 min (skaters, inchworms)</li>
+            <li>5× (15 jump squats • 12 decline push ups • 45s hollow hold)</li>
+            <li>Cool down 5 min (psoas, lats)</li>
+          </ul>
+          <button class="btn" data-plan="advanced">Add to Plan</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nutrition -->
+  <section id="nutrition">
+    <div class="container">
+      <h2>Nutrition</h2>
+      <p class="lead">Balanced weekly ideas—swap freely based on availability and preference.</p>
+      <div class="grid cols-2">
+        <article class="card">
+          <h3>Daily Ideas</h3>
+          <ul class="muted">
+            <li>Breakfast: Oats + yogurt + fruit</li>
+            <li>Lunch: Lentil bowl + salad</li>
+            <li>Dinner: Stir fried veggies + tofu/chicken</li>
+            <li>Snacks: Nuts, fruit, hummus + carrots</li>
+          </ul>
+          <button class="btn secondary" id="saveDiet">Save Diet Plan</button>
+        </article>
+        <article class="card">
+          <h3>Hydration & Habits</h3>
+          <ul class="muted">
+            <li>8–10 glasses of water / day</li>
+            <li>Prioritize protein and fiber</li>
+            <li>Plan 80/20 flexibility</li>
+            <li>Sleep 7–8 hours</li>
+          </ul>
+          <div class="row">
+            <button class="btn" id="logWater">+ Water</button>
+            <span class="hint">Track hydration in your weekly snapshot.</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="lead">We'd love to hear from you. Use the form or reach out on socials.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <form id="contactForm" novalidate>
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" class="input" required placeholder="Your name"/>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" type="email" class="input" required placeholder="you@example.com"/>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" required placeholder="How can we help?"></textarea>
+            </div>
+            <button class="btn" type="submit">Send Message</button>
+            <div id="formStatus" class="hint" role="status"></div>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Find Us</h3>
+          <p class="muted">NIT Jalandhar, Punjab, India</p>
+          <p class="muted">Phone: +91 90000 00000</p>
+          <p class="muted">Email: hello@healthfitness.guide</p>
+          <div class="social" aria-label="Social links">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="YouTube">▶</a>
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="Twitter / X">x</a>
+          </div>
+          <p class="hint" style="margin-top:12px">Replace placeholders with your real handles and email.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container row" style="justify-content:space-between">
+      <span>© <span id="year"></span> Health & Fitness Guide</span>
+      <span class="hint">Built with HTML • CSS • Vanilla JS • Deploy on GitHub Pages</span>
+    </div>
+  </footer>
+
+  <!-- Modals -->
+  <dialog id="appointmentModal">
+    <form method="dialog" style="min-width: min(520px, 92vw); background:var(--panel); color:var(--text); border:1px solid rgba(148,163,184,.2); border-radius:16px; padding:18px; box-shadow:var(--shadow)">
+      <h3 style="margin:0 0 6px">Book Appointment</h3>
+      <p class="hint" style="margin:0 0 12px">This is a demo modal. On a live site, link to Google Forms or your backend.</p>
+      <div class="field">
+        <label for="apptDate">Preferred Date</label>
+        <input id="apptDate" type="date" class="input" required />
+      </div>
+      <div class="field">
+        <label for="apptNotes">Notes</label>
+        <textarea id="apptNotes" placeholder="Goals, injuries, time windows..."></textarea>
+      </div>
+      <div class="row" style="justify-content:flex-end; margin-top:10px">
+        <button class="btn secondary" value="cancel">Cancel</button>
+        <button class="btn" value="confirm" id="saveAppointment">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="dietModal">
+    <form method="dialog" style="min-width: min(520px, 92vw); background:var(--panel); color:var(--text); border:1px solid rgba(148,163,184,.2); border-radius:16px; padding:18px; box-shadow:var(--shadow)">
+      <h3 style="margin:0 0 6px">Diet Planner</h3>
+      <p class="hint" style="margin:0 0 12px">Quickly log daily meals; export later if needed.</p>
+      <div class="grid cols-2">
+        <div class="field"><label for="meal1">Breakfast</label><input id="meal1" class="input" placeholder="E.g., oats + fruit"/></div>
+        <div class="field"><label for="meal2">Lunch</label><input id="meal2" class="input" placeholder="E.g., lentils + salad"/></div>
+        <div class="field"><label for="meal3">Dinner</label><input id="meal3" class="input" placeholder="E.g., tofu + veggies"/></div>
+        <div class="field"><label for="snack">Snack</label><input id="snack" class="input" placeholder="E.g., nuts"/></div>
+      </div>
+      <div class="row" style="justify-content:flex-end; margin-top:10px">
+        <button class="btn secondary" value="cancel">Close</button>
+        <button class="btn" value="confirm" id="saveDietModal">Save</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="script1.js"></script>
+</body>
+</html>
+
+
